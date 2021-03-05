@@ -11,6 +11,12 @@ import java.time.LocalDate;
 public class Practice2 {
 
   public static LocalDate getNextWorkDate(LocalDate date) {
-    return null;
+    int weekDay = date.getDayOfWeek().getValue();
+    LocalDate newWorkDate = date;
+    for (int i=0;i<3;i++){
+      newWorkDate = newWorkDate.plusDays(1);
+      if (weekDay>0 && weekDay<5) break;
+    }
+    return newWorkDate;
   }
 }
